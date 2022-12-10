@@ -1,0 +1,9 @@
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.MainApplication.resources
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.PieChartControl.resources
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.Properties.Resources.resources
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.RemainingTimeBarControl.resources
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.RemainingTimerControl.resources
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.csproj.GenerateResource.cache
+C:\Users\User\Desktop\git\UrgencyInvokeApplication\UrgencyInvokeApplication\obj\Release\UrgencyInvokeApplication.csproj.CoreCompileInputs.cache
