@@ -10,10 +10,10 @@ namespace MainApp.RemainTimer
         private DateTime _startDate;
         private DateTime _limitDate;
         private readonly Timer _timer = new Timer();
-        private readonly Subject<TimeSpan> _remainingSubject = new Subject<TimeSpan>();
+        private readonly Subject<TimeSpan> _remainingTimeSubject = new Subject<TimeSpan>();
         private readonly BehaviorSubject<bool> _isTimeOverChangedSubject = new BehaviorSubject<bool>(false);
         
-        public IObservable<TimeSpan> RemainingObservable => _remainingSubject.AsObservable();
+        public IObservable<TimeSpan> RemainingTimeObservable => _remainingTimeSubject.AsObservable();
         public IObservable<bool> IsTimeOverChangedObservable => _isTimeOverChangedSubject.AsObservable();
 
         public RemainingTimerModel(DateTime limitDate)
@@ -56,7 +56,7 @@ namespace MainApp.RemainTimer
 
         private void OnTimerElapse(object sender, ElapsedEventArgs e)
         {
-            _remainingSubject.OnNext(GetRemainingTime());
+            _remainingTimeSubject.OnNext(GetRemainingTime());
             var isTimeOver = IsTimeOver();
             if (_isTimeOverChangedSubject.Value != isTimeOver)
             {

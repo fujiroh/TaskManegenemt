@@ -34,7 +34,7 @@ namespace MainApp.RemainTimer
         private void Subscribe()
         {
             _subscriber = new CompositeDisposable(
-                _remainingTimerModel.RemainingObservable.Subscribe(_ => OnTimerElapsed()));
+                _remainingTimerModel.RemainingTimeObservable.Subscribe(_ => OnTimerElapsed()));
         }
 
         private string GetTimeViewString(TimeSpan remainingTime)
