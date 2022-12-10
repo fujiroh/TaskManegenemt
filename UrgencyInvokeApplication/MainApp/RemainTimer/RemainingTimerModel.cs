@@ -15,7 +15,6 @@ namespace MainApp.RemainTimer
         
         public IObservable<TimeSpan> RemainingObservable => _remainingSubject.AsObservable();
         public IObservable<bool> IsTimeOverChangedObservable => _isTimeOverChangedSubject.AsObservable();
-        public TimeViewType ViewType { get; private set; } = TimeViewType.Full;
 
         public RemainingTimerModel(DateTime limitDate)
         {

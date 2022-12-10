@@ -33,27 +33,13 @@ namespace MainApp.RemainTimer
 
         private void Subscribe()
         {
-            Click += OnTimerViewTypeChanged;
             _subscriber = new CompositeDisposable(
                 _remainingTimerModel.RemainingObservable.Subscribe(_ => OnTimerElapsed()));
         }
 
         private string GetTimeViewString(TimeSpan remainingTime)
         {
-            switch (_remainingTimerModel.ViewType)
-            {
-                case TimeViewType.Full:
-                    return
-                        $"{remainingTime.Days}日{remainingTime.Hours}時間{remainingTime.Minutes}分{remainingTime.Seconds}秒";
-                case TimeViewType.Day: return $"{(int) remainingTime.TotalDays}日";
-                case TimeViewType.Hour: return $"{(int) remainingTime.TotalHours}時間";
-                case TimeViewType.Minute: return $"{(int) remainingTime.TotalMinutes}分";
-                default: return "";
-            }
-        }
-
-        private void OnTimerViewTypeChanged(object sender, EventArgs e)
-        {
+            return "";
         }
 
         private void OnTimerElapsed()
