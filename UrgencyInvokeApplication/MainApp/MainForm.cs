@@ -8,7 +8,7 @@ namespace MainApp
         public MainForm()
         {
             InitializeComponent();
-            _remainingPieChart.Initialize(DateTime.Now, new DateTime(2022, 11, 26,17,20,0));
+            _remainingPieChart.Initialize(DateTime.Now, new DateTime(2022, 12, 26,17,20,0));
             // _remainingPieChart.TimeOverObservable.Subscribe(_ => MessageBox.Show("Time Over"));
         }
 
