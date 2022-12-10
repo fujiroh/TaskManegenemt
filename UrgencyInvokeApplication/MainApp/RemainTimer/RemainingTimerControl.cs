@@ -54,7 +54,6 @@ namespace MainApp.RemainTimer
 
         private void OnTimerViewTypeChanged(object sender, EventArgs e)
         {
-            _remainingTimerModel.ChangeViewType();
         }
 
         private void OnTimerElapsed()
