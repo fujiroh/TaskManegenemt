@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace MainApp.Extension
+namespace Main.Extension
 {
     public static class SizeExtension
     {

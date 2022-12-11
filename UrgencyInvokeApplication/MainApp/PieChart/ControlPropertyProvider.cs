@@ -1,7 +1,8 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using MainApp.PieChart;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     public class ControlPropertyProvider : IControlPropertyProvider
     {

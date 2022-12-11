@@ -3,7 +3,7 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Timers;
 
-namespace MainApp.RemainTimer
+namespace Main.RemainTimer
 {
     public class RemainingTimerModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     partial class PieChartControl
     {

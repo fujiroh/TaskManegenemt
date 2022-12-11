@@ -4,29 +4,29 @@ using System.Drawing;
 using System.Linq;
 using MainApp.Extension;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     /// <summary>
     ///　円グラの要素リスト
     /// </summary>
-    public class PieChartList : IEnumerable<IPieChartContent>
+    public class PieChartList : IEnumerable<Main.PieChart.IPieChartContent>
     {
-        private List<IPieChartContent> _pieChartContents;
+        private List<Main.PieChart.IPieChartContent> _pieChartContents;
 
-        public IPieChartContent this[int index] => _pieChartContents[index];
+        public Main.PieChart.IPieChartContent this[int index] => _pieChartContents[index];
 
         public PieChartList()
         {
-            _pieChartContents = new List<IPieChartContent>();
+            _pieChartContents = new List<Main.PieChart.IPieChartContent>();
         }
 
-        public PieChartList(IEnumerable<IPieChartContent> pieChartValues)
+        public PieChartList(IEnumerable<Main.PieChart.IPieChartContent> pieChartValues)
         {
-            _pieChartContents = new List<IPieChartContent>();
+            _pieChartContents = new List<Main.PieChart.IPieChartContent>();
             _pieChartContents.AddRange(pieChartValues);
         }
 
-        public IEnumerable<MainApp.PieChart.PieDrawInfo> CratePieShapeInfos(Point centerPoint, Size size)
+        public IEnumerable<PieDrawInfo> CratePieShapeInfos(Point centerPoint, Size size)
         {
             var angle = 0D;
             foreach (var content in _pieChartContents)
@@ -43,7 +43,7 @@ namespace MainApp.PieChart
             return value.Convert(totalValue);
         }
 
-        public void AddContent(IEnumerable<IPieChartContent> values)
+        public void AddContent(IEnumerable<Main.PieChart.IPieChartContent> values)
         {
             _pieChartContents.AddRange(values);
         }
@@ -58,7 +58,7 @@ namespace MainApp.PieChart
             return _pieChartContents.Sum(x => x.Value);
         }
 
-        public IEnumerator<IPieChartContent> GetEnumerator()
+        public IEnumerator<Main.PieChart.IPieChartContent> GetEnumerator()
         {
             foreach (var value in _pieChartContents)
             {

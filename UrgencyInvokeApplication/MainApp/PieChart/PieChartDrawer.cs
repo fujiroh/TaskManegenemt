@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using Hazzik.Maybe;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     public class PieChartDrawer
     {
@@ -91,18 +91,18 @@ namespace MainApp.PieChart
             }
         }
 
-        public Maybe<IPieChartValue> GetHitContent(Point location, Point centerPoint, Size size)
+        public Maybe<Main.PieChart.IPieChartValue> GetHitContent(Point location, Point centerPoint, Size size)
         {
             foreach (var pieShapeInfo in _pieChartList.CratePieShapeInfos(centerPoint, size))
             {
                 var hitTest = pieShapeInfo.HitTest(location);
                 if (hitTest)
                 {
-                    return new Maybe<IPieChartValue>(pieShapeInfo.CreateValueInfo());
+                    return new Maybe<Main.PieChart.IPieChartValue>(pieShapeInfo.CreateValueInfo());
                 }
             }
 
-            return Maybe<IPieChartValue>.Nothing;
+            return Maybe<Main.PieChart.IPieChartValue>.Nothing;
         }
     }
 }

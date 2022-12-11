@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using MainApp.RemainTimer;
-using MainApplication;
+using Main.RemainTimer;
 
 namespace UrgencyInvokerTest
 {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace MainApp.RemainTimer
+namespace Main.RemainTimer
 {
     public partial class RemainingTimeBarControl : UserControl
     {

@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     /// <summary>
     /// 円グラフの値 
     /// </summary>
-    public class PieValueInfo : IPieChartValue, IEquatable<PieValueInfo>
+    public class PieValueInfo : Main.PieChart.IPieChartValue, IEquatable<PieValueInfo>
     {
         public string ContentTitle { get; }
         public double Ratio { get; }
@@ -16,7 +16,7 @@ namespace MainApp.PieChart
             Ratio = sweepAngle / 360;
         }
 
-        public static IPieChartValue Empty => new PieValueInfo("", 0);
+        public static Main.PieChart.IPieChartValue Empty => new PieValueInfo("", 0);
 
 
         public bool Equals(PieValueInfo other)

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Drawing;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     /// <summary>
     /// 円グラフに表示する要素
     /// </summary>
-    public class PieChartContent : IPieChartContent, IEquatable<PieChartContent>
+    public class PieChartContent : Main.PieChart.IPieChartContent, IEquatable<PieChartContent>
     {
         public PieChartContent(double value, string contentTitle, Color pieColor)
         {

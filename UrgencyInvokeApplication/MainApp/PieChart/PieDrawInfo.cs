@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using MainApp.Extension;
+using Main.Extension;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     public class PieDrawInfo
     {
@@ -70,7 +70,7 @@ namespace MainApp.PieChart
             }
         }
 
-        public IPieChartValue CreateValueInfo()
+        public Main.PieChart.IPieChartValue CreateValueInfo()
         {
             return new PieValueInfo(ContentTitle, SweepAngle);
         }

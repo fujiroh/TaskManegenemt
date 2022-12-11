@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace MainApp.Graph
+namespace Main.Graph
 {
     partial class GraphControl
     {

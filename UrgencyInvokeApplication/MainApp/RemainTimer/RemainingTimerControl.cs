@@ -2,7 +2,7 @@
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-namespace MainApp.RemainTimer
+namespace Main.RemainTimer
 {
     public partial class RemainingTimerControl : UserControl
     {

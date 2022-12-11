@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
-using MainApp.PieChart;
-using MainApp.Extension;
+using Main.Extension;
+using Main.PieChart;
 
-namespace MainApp.RemainTimer
+namespace Main.RemainTimer
 {
     public class TimeContentFactory
     {

@@ -1,8 +1,9 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using MainApp.PieChart;
+using PieDrawInfo = Main.PieChart.PieDrawInfo;
 
-namespace MainApp.Extension
+namespace Main.Extension
 {
     public static class GraphicExtension
     {

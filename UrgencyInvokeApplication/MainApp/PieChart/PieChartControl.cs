@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Hazzik.Maybe;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     [Serializable]
     public partial class PieChartControl : UserControl
@@ -40,7 +40,7 @@ namespace MainApp.PieChart
             return Math.Min(Height, Width);
         }
 
-        private Maybe<IPieChartValue> GetHitContent(Point mousePos)
+        private Maybe<Main.PieChart.IPieChartValue> GetHitContent(Point mousePos)
         {
             var edgeLength = GetSmallerEdge();
             return _pieGraphDrawer.GetHitContent(mousePos, CenterPoint, new Size(edgeLength, edgeLength));
@@ -67,7 +67,7 @@ namespace MainApp.PieChart
             Invalidate();
         }
 
-        private void ChangeToolTipVisual(Maybe<IPieChartValue> value)
+        private void ChangeToolTipVisual(Maybe<Main.PieChart.IPieChartValue> value)
         {
             _toolTipVisualizer.Show(value, _mousePos);
         }
@@ -89,7 +89,7 @@ namespace MainApp.PieChart
                 _toolTip.Active = true;
             }
 
-            public void Show(Maybe<IPieChartValue> value, Point viewPoint)
+            public void Show(Maybe<Main.PieChart.IPieChartValue> value, Point viewPoint)
             {
                 if (value.HasValue)
                 {

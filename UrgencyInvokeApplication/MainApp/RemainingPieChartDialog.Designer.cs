@@ -1,11 +1,14 @@
-﻿namespace Main
+﻿using System.ComponentModel;
+using Main.RemainTimer;
+
+namespace Main
 {
-    partial class MainForm
+    partial class RemainingPieChartDialog
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,32 +32,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this._remainingTimerChartControl = new RemainingTimerChartControl();
             this.SuspendLayout();
             // 
-            // button1
+            // _remainingTimerChartControl
             // 
-            this.button1.Location = new System.Drawing.Point(29, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 24);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this._remainingTimerChartControl.BackColor = System.Drawing.Color.White;
+            this._remainingTimerChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._remainingTimerChartControl.Location = new System.Drawing.Point(0, 0);
+            this._remainingTimerChartControl.Name = "_remainingTimerChartControl";
+            this._remainingTimerChartControl.Size = new System.Drawing.Size(334, 327);
+            this._remainingTimerChartControl.TabIndex = 0;
             // 
-            // MainForm
+            // RemainingPieChartDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 305);
-            this.Controls.Add(this.button1);
-            this.DoubleBuffered = true;
-            this.Name = "MainForm";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(334, 327);
+            this.Controls.Add(this._remainingTimerChartControl);
+            this.Name = "RemainingPieChartDialog";
+            this.Text = "RemainingPieChartDialog";
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button button1;
+        private RemainingTimerChartControl _remainingTimerChartControl;
 
         #endregion
     }

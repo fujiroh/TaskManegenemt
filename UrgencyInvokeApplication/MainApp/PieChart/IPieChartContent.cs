@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace MainApp.PieChart
+namespace Main.PieChart
 {
     public interface IPieChartContent : IPieChartContentFactory
     {
