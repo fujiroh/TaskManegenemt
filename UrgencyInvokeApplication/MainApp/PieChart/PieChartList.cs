@@ -9,20 +9,20 @@ namespace Main.PieChart
     /// <summary>
     ///　円グラの要素リスト
     /// </summary>
-    public class PieChartList : IEnumerable<Main.PieChart.IPieChartContent>
+    public class PieChartList : IEnumerable<IPieChartContent>
     {
-        private List<Main.PieChart.IPieChartContent> _pieChartContents;
+        private List<IPieChartContent> _pieChartContents;
 
-        public Main.PieChart.IPieChartContent this[int index] => _pieChartContents[index];
+        public IPieChartContent this[int index] => _pieChartContents[index];
 
         public PieChartList()
         {
-            _pieChartContents = new List<Main.PieChart.IPieChartContent>();
+            _pieChartContents = new List<IPieChartContent>();
         }
 
-        public PieChartList(IEnumerable<Main.PieChart.IPieChartContent> pieChartValues)
+        public PieChartList(IEnumerable<IPieChartContent> pieChartValues)
         {
-            _pieChartContents = new List<Main.PieChart.IPieChartContent>();
+            _pieChartContents = new List<IPieChartContent>();
             _pieChartContents.AddRange(pieChartValues);
         }
 
@@ -43,7 +43,7 @@ namespace Main.PieChart
             return value.Convert(totalValue);
         }
 
-        public void AddContent(IEnumerable<Main.PieChart.IPieChartContent> values)
+        public void AddContent(IEnumerable<IPieChartContent> values)
         {
             _pieChartContents.AddRange(values);
         }
@@ -58,7 +58,7 @@ namespace Main.PieChart
             return _pieChartContents.Sum(x => x.Value);
         }
 
-        public IEnumerator<Main.PieChart.IPieChartContent> GetEnumerator()
+        public IEnumerator<IPieChartContent> GetEnumerator()
         {
             foreach (var value in _pieChartContents)
             {

@@ -4,10 +4,11 @@ using System.Windows.Forms;
 namespace Main
 {
     public partial class MainForm : Form
-    {
+    {　　　　　　　　　　　　　　　　　
         public MainForm()
         {
             InitializeComponent();
+            remainingTimerChartControl1.Initialize(DateTime.Now, new DateTime(2022,12,16));
         }
 
         private void button1_Click(object sender, EventArgs e)

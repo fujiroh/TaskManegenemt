@@ -2,15 +2,14 @@
 using System.Timers;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
-using ControlPropertyProvider = Main.PieChart.ControlPropertyProvider;
-using PieChartList = Main.PieChart.PieChartList;
+using Main.PieChart;
 
 namespace Main.RemainTimer
 {
     public partial class RemainingTimerChartControl : UserControl,IDockContent
     {
         private RemainingTimerModel _remainingTimerModelModel;
-        private Main.RemainTimer.TimeContentFactory _timeContentFactory;
+        private TimeContentFactory _timeContentFactory;
         
         public IObservable<bool> TimeOverObservable => _remainingTimerModelModel.IsTimeOverChangedObservable;
 
@@ -23,7 +22,7 @@ namespace Main.RemainTimer
         {
             _remainingTimerModelModel = new RemainingTimerModel(limitDate);
             _remainingTimerModelModel.SetStartDate(startDate);
-            _timeContentFactory = new Main.RemainTimer.TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this));
+            _timeContentFactory = new TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this));
             _pieChartControl.Contents = new PieChartList(new[]
             {
                 _timeContentFactory.CreateRemainingTimeContent(),

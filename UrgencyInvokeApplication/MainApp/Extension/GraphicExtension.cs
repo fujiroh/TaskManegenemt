@@ -1,7 +1,6 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using MainApp.PieChart;
-using PieDrawInfo = Main.PieChart.PieDrawInfo;
+using Main.PieChart;
 
 namespace Main.Extension
 {

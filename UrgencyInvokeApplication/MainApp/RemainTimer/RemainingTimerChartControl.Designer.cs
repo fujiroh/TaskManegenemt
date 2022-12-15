@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
-using PieChartControl = Main.PieChart.PieChartControl;
-using PieChartList = Main.PieChart.PieChartList;
+using Main.PieChart;
 
 namespace Main.RemainTimer
 {

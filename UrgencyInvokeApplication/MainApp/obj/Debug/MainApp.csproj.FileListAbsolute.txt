@@ -32,7 +32,6 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.GenerateResource.cache
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\Main.exe.config
-C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\Main.exe
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\Main.pdb
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\Hazzik.Maybe.dll
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\System.Reactive.dll
