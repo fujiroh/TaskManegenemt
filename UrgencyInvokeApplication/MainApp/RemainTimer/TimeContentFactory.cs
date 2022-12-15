@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
-using Main.Extension;
 using Main.PieChart;
 
 namespace Main.RemainTimer
@@ -9,22 +7,25 @@ namespace Main.RemainTimer
     public class TimeContentFactory
     {
         private readonly RemainingTimerModel _remainingTimerModel;
-        private readonly IControlPropertyProvider _provider;
+        private readonly IControlPropertyProvider _controlPropertyProvider;
+        
+        private const string STR_PASSED_TIME = "経過時間";
+        private const string STR_REMAIN_TIME = "残り時間";
 
-        public TimeContentFactory(RemainingTimerModel remainingTimerModel, IControlPropertyProvider provider)
+        public TimeContentFactory(RemainingTimerModel remainingTimerModel, IControlPropertyProvider controlPropertyProvider)
         {
+            _controlPropertyProvider = controlPropertyProvider;
             _remainingTimerModel = remainingTimerModel;
-            _provider = provider;
         }
 
         public IPieChartContent CreateRemainingTimeContent()
         {
-            return new TimeContent("残り", Color.Cyan, _provider, _remainingTimerModel.GetRemainingTime);
+            return new TimeContent(STR_REMAIN_TIME, Color.Cyan, _controlPropertyProvider, _remainingTimerModel.GetRemainingTime);
         }
 
         public IPieChartContent CreatePassedTimeContent()
         {
-            return new TimeContent("経過時間", Color.Gray, _provider, _remainingTimerModel.GetPassedTime);
+            return new TimeContent(STR_PASSED_TIME, Color.Gray, _controlPropertyProvider, _remainingTimerModel.GetPassedTime);
         }
 
         private class TimeContent : IPieChartContent
@@ -62,7 +63,7 @@ namespace Main.RemainTimer
                     PieColor,
                     ContentTitle);
             }
-            
+
             private static Size RoundSquare(Size size)
             {
                 var minEdge = Math.Min(size.Height, size.Width);
