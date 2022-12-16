@@ -2,6 +2,9 @@
 
 namespace Main
 {
+    /// <summary>
+    /// 単一のコントロールを表示する用のダイアログ基底クラス
+    /// </summary>
     public partial class DockingPanelBase : Form
     {
         private Control _dockingControl;
@@ -11,15 +14,11 @@ namespace Main
             InitializeComponent();
         }
 
-        public void Initialize(Control control)
-        {
-            SetControl(control);
-            control.Dock = DockStyle.Fill;
-        }
-        
-        private void SetControl(Control control)
+        public void SetInitialControl(Control control)
         {
             _dockingControl = control;
+            Controls.Add(control);
+            control.Dock = DockStyle.Fill;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
@@ -10,7 +11,10 @@ namespace Main.RemainTimer
     {
         private RemainingTimerModel _remainingTimerModelModel;
         private TimeContentFactory _timeContentFactory;
-        
+
+        public Color RemainTimeColor { get; set; } = Color.Aqua;
+        public Color PassedTimeColor { get; set; } = Color.Gray;
+
         public IObservable<bool> TimeOverObservable => _remainingTimerModelModel.IsTimeOverChangedObservable;
 
         public RemainingTimerChartControl()
@@ -22,7 +26,7 @@ namespace Main.RemainTimer
         {
             _remainingTimerModelModel = new RemainingTimerModel(limitDate);
             _remainingTimerModelModel.SetStartDate(startDate);
-            _timeContentFactory = new TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this));
+            _timeContentFactory = new TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this), RemainTimeColor, PassedTimeColor);
             _pieChartControl.Contents = new PieChartList(new[]
             {
                 _timeContentFactory.CreateRemainingTimeContent(),

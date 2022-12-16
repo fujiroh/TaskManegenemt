@@ -32,14 +32,15 @@ namespace Main.RemainTimer
         /// </summary>
         private void InitializeComponent()
         {
-            PieChartList pieChartList1 = new PieChartList();
-            this._pieChartControl = new PieChartControl();
+            Main.PieChart.PieChartList pieChartList1 = new Main.PieChart.PieChartList();
+            this._pieChartControl = new Main.PieChart.PieChartControl();
             this._timer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize) (this._timer)).BeginInit();
             this.SuspendLayout();
             // 
             // _pieChartControl
             // 
+            this._pieChartControl.BackColor = System.Drawing.Color.Transparent;
             this._pieChartControl.Contents = pieChartList1;
             this._pieChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pieChartControl.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
@@ -69,7 +70,7 @@ namespace Main.RemainTimer
 
         private System.Timers.Timer _timer;
 
-        private PieChartControl _pieChartControl;
+        private Main.PieChart.PieChartControl _pieChartControl;
 
         #endregion
     }

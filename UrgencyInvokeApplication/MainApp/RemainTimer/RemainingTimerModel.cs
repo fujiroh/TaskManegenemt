@@ -16,6 +16,11 @@ namespace Main.RemainTimer
         public IObservable<TimeSpan> RemainingTimeObservable => _remainingTimeSubject.AsObservable();
         public IObservable<bool> IsTimeOverChangedObservable => _isTimeOverChangedSubject.AsObservable();
 
+        public RemainingTimerModel()
+        {
+            InitializeTimer();
+        }
+        
         public RemainingTimerModel(DateTime limitDate)
         {
             _limitDate = limitDate;
@@ -31,6 +36,11 @@ namespace Main.RemainTimer
         public void SetStartDate(DateTime dateTime)
         {
             _startDate = dateTime;
+        }
+        
+        public void SetLimitDate(DateTime dateTime)
+        {
+            _limitDate = dateTime;
         }
 
         public void Start()

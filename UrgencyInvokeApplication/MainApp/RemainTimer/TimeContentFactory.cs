@@ -8,24 +8,32 @@ namespace Main.RemainTimer
     {
         private readonly RemainingTimerModel _remainingTimerModel;
         private readonly IControlPropertyProvider _controlPropertyProvider;
-        
+        private readonly Color _remainPieColor;
+        private readonly Color _passedPieColor;
+
         private const string STR_PASSED_TIME = "経過時間";
         private const string STR_REMAIN_TIME = "残り時間";
 
-        public TimeContentFactory(RemainingTimerModel remainingTimerModel, IControlPropertyProvider controlPropertyProvider)
+        public TimeContentFactory(
+            RemainingTimerModel remainingTimerModel,
+            IControlPropertyProvider controlPropertyProvider,
+            Color remainPieColor,
+            Color passedPieColor)
         {
             _controlPropertyProvider = controlPropertyProvider;
             _remainingTimerModel = remainingTimerModel;
+            _remainPieColor = remainPieColor;
+            _passedPieColor = passedPieColor;
         }
 
         public IPieChartContent CreateRemainingTimeContent()
         {
-            return new TimeContent(STR_REMAIN_TIME, Color.Cyan, _controlPropertyProvider, _remainingTimerModel.GetRemainingTime);
+            return new TimeContent(STR_REMAIN_TIME, _remainPieColor, _controlPropertyProvider, _remainingTimerModel.GetRemainingTime);
         }
 
         public IPieChartContent CreatePassedTimeContent()
         {
-            return new TimeContent(STR_PASSED_TIME, Color.Gray, _controlPropertyProvider, _remainingTimerModel.GetPassedTime);
+            return new TimeContent(STR_PASSED_TIME, _passedPieColor, _controlPropertyProvider, _remainingTimerModel.GetPassedTime);
         }
 
         private class TimeContent : IPieChartContent
