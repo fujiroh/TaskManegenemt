@@ -1,4 +1,4 @@
-﻿namespace Main.Extension
+﻿namespace MainApp.Extension
 {
     public static class ValueAngleConverter
     {

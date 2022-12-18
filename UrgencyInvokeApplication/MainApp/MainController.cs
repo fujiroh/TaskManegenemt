@@ -1,4 +1,4 @@
-﻿namespace MainApp
+﻿namespace MainApplication
 {
     public class MainController
     {

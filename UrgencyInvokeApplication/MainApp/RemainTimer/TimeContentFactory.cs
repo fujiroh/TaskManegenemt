@@ -1,60 +1,43 @@
-﻿using System;
-using System.Drawing;
-using Main.PieChart;
+﻿using System.Drawing;
+using MainApp.PieChart;
+using MainApp.Extension;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
     public class TimeContentFactory
     {
         private readonly RemainingTimerModel _remainingTimerModel;
-        private readonly IControlPropertyProvider _controlPropertyProvider;
-        private readonly Color _remainPieColor;
-        private readonly Color _passedPieColor;
+        private readonly IControlPropertyProvider _provider;
 
-        private const string STR_PASSED_TIME = "経過時間";
-        private const string STR_REMAIN_TIME = "残り時間";
-
-        public TimeContentFactory(
-            RemainingTimerModel remainingTimerModel,
-            IControlPropertyProvider controlPropertyProvider,
-            Color remainPieColor,
-            Color passedPieColor)
+        public TimeContentFactory(RemainingTimerModel remainingTimerModel, IControlPropertyProvider provider)
         {
-            _controlPropertyProvider = controlPropertyProvider;
             _remainingTimerModel = remainingTimerModel;
-            _remainPieColor = remainPieColor;
-            _passedPieColor = passedPieColor;
+            _provider = provider;
         }
 
         public IPieChartContent CreateRemainingTimeContent()
         {
-            return new TimeContent(STR_REMAIN_TIME, _remainPieColor, _controlPropertyProvider, _remainingTimerModel.GetRemainingTime);
+            return new RemainingTimeContent(_remainingTimerModel, _provider);
         }
 
         public IPieChartContent CreatePassedTimeContent()
         {
-            return new TimeContent(STR_PASSED_TIME, _passedPieColor, _controlPropertyProvider, _remainingTimerModel.GetPassedTime);
+            return new PassedTimeContent(_remainingTimerModel, _provider);
         }
 
-        private class TimeContent : IPieChartContent
+        private class RemainingTimeContent : IPieChartContent
         {
+            private readonly RemainingTimerModel _remainingTimerModel;
             private readonly IControlPropertyProvider _provider;
-            private readonly Func<TimeSpan> _timeGetAction;
 
-            public double Value => _timeGetAction().TotalSeconds;
-            public string ContentTitle { get; }
-            public Color PieColor { get; }
+            public double Value => _remainingTimerModel.GetRemainingTime().TotalSeconds;
+            public string ContentTitle => "残り時間";
+            public Color PieColor => Color.LimeGreen;
 
-            public TimeContent(
-                string contentTitle,
-                Color pieColor,
-                IControlPropertyProvider provider,
-                Func<TimeSpan> timeGetAction)
+            public RemainingTimeContent(RemainingTimerModel remainingTimerModel, IControlPropertyProvider provider)
             {
-                _timeGetAction = timeGetAction;
+                _remainingTimerModel = remainingTimerModel;
                 _provider = provider;
-                ContentTitle = contentTitle;
-                PieColor = pieColor;
             }
 
             public PieDrawInfo CreateDrawInfo(
@@ -65,17 +48,41 @@ namespace Main.RemainTimer
             {
                 return PieDrawInfo.Create(
                     _provider.ProvideCenterPoint(),
-                    RoundSquare(_provider.ProvideSize()),
+                    _provider.ProvideSize().RoundSquare(),
                     startAngle,
                     sweepAngle,
                     PieColor,
                     ContentTitle);
             }
+        }
 
-            private static Size RoundSquare(Size size)
+        private class PassedTimeContent : IPieChartContent
+        {
+            private readonly RemainingTimerModel _remainingTimerModel;
+            private readonly IControlPropertyProvider _provider;
+            public double Value => _remainingTimerModel.GetPassedTime().TotalSeconds;
+            public string ContentTitle => "経過時間";
+            public Color PieColor => Color.Black;
+
+            public PassedTimeContent(RemainingTimerModel remainingTimerModel, IControlPropertyProvider provider)
             {
-                var minEdge = Math.Min(size.Height, size.Width);
-                return new Size(minEdge, minEdge);
+                _remainingTimerModel = remainingTimerModel;
+                _provider = provider;
+            }
+
+            public PieDrawInfo CreateDrawInfo(
+                Point centerPoint,
+                Size size,
+                double startAngle,
+                double sweepAngle)
+            {
+                return PieDrawInfo.Create(
+                    _provider.ProvideCenterPoint(),
+                    _provider.ProvideSize().RoundSquare(),
+                    startAngle,
+                    sweepAngle,
+                    PieColor,
+                    ContentTitle);
             }
         }
     }

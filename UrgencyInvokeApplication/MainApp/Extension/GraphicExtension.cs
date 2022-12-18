@@ -1,8 +1,8 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using Main.PieChart;
+using MainApp.PieChart;
 
-namespace Main.Extension
+namespace MainApp.Extension
 {
     public static class GraphicExtension
     {

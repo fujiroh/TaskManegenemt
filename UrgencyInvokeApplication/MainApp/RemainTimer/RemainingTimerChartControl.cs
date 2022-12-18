@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Drawing;
 using System.Timers;
 using System.Windows.Forms;
-using WeifenLuo.WinFormsUI.Docking;
-using Main.PieChart;
+using MainApp.PieChart;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
-    public partial class RemainingTimerChartControl : UserControl,IDockContent
+    public partial class RemainingTimerChartControl : UserControl
     {
         private RemainingTimerModel _remainingTimerModelModel;
         private TimeContentFactory _timeContentFactory;
-
-        public Color RemainTimeColor { get; set; } = Color.Aqua;
-        public Color PassedTimeColor { get; set; } = Color.Gray;
-
+        
         public IObservable<bool> TimeOverObservable => _remainingTimerModelModel.IsTimeOverChangedObservable;
 
         public RemainingTimerChartControl()
@@ -26,7 +21,7 @@ namespace Main.RemainTimer
         {
             _remainingTimerModelModel = new RemainingTimerModel(limitDate);
             _remainingTimerModelModel.SetStartDate(startDate);
-            _timeContentFactory = new TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this), RemainTimeColor, PassedTimeColor);
+            _timeContentFactory = new TimeContentFactory(_remainingTimerModelModel, new ControlPropertyProvider(this));
             _pieChartControl.Contents = new PieChartList(new[]
             {
                 _timeContentFactory.CreateRemainingTimeContent(),
@@ -45,19 +40,5 @@ namespace Main.RemainTimer
         {
             _pieChartControl.Invalidate();
         }
-
-        public void ApplyTheme()
-        {
-        }
-
-        public void OnActivated(EventArgs e)
-        {
-        }
-
-        public void OnDeactivate(EventArgs e)
-        {
-        }
-
-        public DockContentHandler DockHandler { get; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace Main.PieChart
+namespace MainApp.PieChart
 {
     /// <summary>
     /// 円グラフに表示する要素

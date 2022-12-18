@@ -2,22 +2,22 @@
 using System.Reactive.Disposables;
 using System.Windows.Forms;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
     public partial class RemainingTimerControl : UserControl
     {
-        private readonly RemainingTimerModel _remainingTimerModel;
+        private readonly MainApp.RemainTimer.RemainingTimerModel _remainingTimerModel;
         private IDisposable _subscriber;
 
         public RemainingTimerControl()
         {
-            _remainingTimerModel = new RemainingTimerModel(new DateTime(2022, 10, 10));
+            _remainingTimerModel = new MainApp.RemainTimer.RemainingTimerModel(new DateTime(2022, 10, 10));
             InitializeComponent();
             InitializeTimer();
             Subscribe();
         }
 
-        public RemainingTimerControl(RemainingTimerModel remainingTimerModel)
+        public RemainingTimerControl(MainApp.RemainTimer.RemainingTimerModel remainingTimerModel)
         {
             _remainingTimerModel = remainingTimerModel;
             InitializeComponent();
@@ -33,13 +33,28 @@ namespace Main.RemainTimer
 
         private void Subscribe()
         {
+            Click += OnTimerViewTypeChanged;
             _subscriber = new CompositeDisposable(
-                _remainingTimerModel.RemainingTimeObservable.Subscribe(_ => OnTimerElapsed()));
+                _remainingTimerModel.RemainingObservable.Subscribe(_ => OnTimerElapsed()));
         }
 
         private string GetTimeViewString(TimeSpan remainingTime)
         {
-            return "";
+            switch (_remainingTimerModel.ViewType)
+            {
+                case MainApp.RemainTimer.TimeViewType.Full:
+                    return
+                        $"{remainingTime.Days}日{remainingTime.Hours}時間{remainingTime.Minutes}分{remainingTime.Seconds}秒";
+                case MainApp.RemainTimer.TimeViewType.Day: return $"{(int) remainingTime.TotalDays}日";
+                case MainApp.RemainTimer.TimeViewType.Hour: return $"{(int) remainingTime.TotalHours}時間";
+                case MainApp.RemainTimer.TimeViewType.Minute: return $"{(int) remainingTime.TotalMinutes}分";
+                default: return "";
+            }
+        }
+
+        private void OnTimerViewTypeChanged(object sender, EventArgs e)
+        {
+            _remainingTimerModel.ChangeViewType();
         }
 
         private void OnTimerElapsed()

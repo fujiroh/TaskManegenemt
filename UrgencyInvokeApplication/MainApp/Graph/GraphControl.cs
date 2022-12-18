@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Main.Graph
+namespace MainApp.Graph
 {
     public partial class GraphControl : UserControl
     {

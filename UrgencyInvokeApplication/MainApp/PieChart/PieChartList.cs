@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using MainApp.Extension;
 
-namespace Main.PieChart
+namespace MainApp.PieChart
 {
     /// <summary>
     ///　円グラの要素リスト
@@ -12,6 +12,7 @@ namespace Main.PieChart
     public class PieChartList : IEnumerable<IPieChartContent>
     {
         private List<IPieChartContent> _pieChartContents;
+        private const double START_ANGLE = -90D;
 
         public IPieChartContent this[int index] => _pieChartContents[index];
 
@@ -28,7 +29,7 @@ namespace Main.PieChart
 
         public IEnumerable<PieDrawInfo> CratePieShapeInfos(Point centerPoint, Size size)
         {
-            var angle = 0D;
+            var angle = START_ANGLE;
             foreach (var content in _pieChartContents)
             {
                 var sweepAngle = GetSweepAngle(content.Value);

@@ -3,24 +3,21 @@ using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Timers;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
     public class RemainingTimerModel
     {
         private DateTime _startDate;
         private DateTime _limitDate;
         private readonly Timer _timer = new Timer();
-        private readonly Subject<TimeSpan> _remainingTimeSubject = new Subject<TimeSpan>();
+        private readonly Subject<TimeSpan> _remainingSubject = new Subject<TimeSpan>();
         private readonly BehaviorSubject<bool> _isTimeOverChangedSubject = new BehaviorSubject<bool>(false);
         
-        public IObservable<TimeSpan> RemainingTimeObservable => _remainingTimeSubject.AsObservable();
+        public IObservable<TimeSpan> RemainingObservable => _remainingSubject.AsObservable();
         public IObservable<bool> IsTimeOverChangedObservable => _isTimeOverChangedSubject.AsObservable();
 
-        public RemainingTimerModel()
-        {
-            InitializeTimer();
-        }
-        
+        public TimeViewType ViewType { get; private set; } = TimeViewType.Full;
+
         public RemainingTimerModel(DateTime limitDate)
         {
             _limitDate = limitDate;
@@ -36,11 +33,6 @@ namespace Main.RemainTimer
         public void SetStartDate(DateTime dateTime)
         {
             _startDate = dateTime;
-        }
-        
-        public void SetLimitDate(DateTime dateTime)
-        {
-            _limitDate = dateTime;
         }
 
         public void Start()
@@ -66,12 +58,17 @@ namespace Main.RemainTimer
 
         private void OnTimerElapse(object sender, ElapsedEventArgs e)
         {
-            _remainingTimeSubject.OnNext(GetRemainingTime());
+            _remainingSubject.OnNext(GetRemainingTime());
             var isTimeOver = IsTimeOver();
             if (_isTimeOverChangedSubject.Value != isTimeOver)
             {
                 _isTimeOverChangedSubject.OnNext(isTimeOver);
             }
+        }
+
+        public void ChangeViewType()
+        {
+            ViewType = (TimeViewType) ((int) (ViewType + 1) % Enum.GetValues(typeof(TimeViewType)).Length);
         }
     }
 }

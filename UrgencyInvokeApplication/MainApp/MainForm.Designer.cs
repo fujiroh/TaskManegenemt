@@ -1,4 +1,6 @@
-﻿namespace Main
+﻿using RemainingTimerChartControl = MainApp.RemainTimer.RemainingTimerChartControl;
+
+namespace MainApp
 {
     partial class MainForm
     {
@@ -29,44 +31,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.remainingTimerChartControl1 = new Main.RemainTimer.RemainingTimerChartControl();
+            this._addButton = new System.Windows.Forms.Button();
+            this._remainingPieChart = new MainApp.RemainTimer.RemainingTimerChartControl();
             this.SuspendLayout();
             // 
-            // button1
+            // _addButton
             // 
-            this.button1.Location = new System.Drawing.Point(29, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 24);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this._addButton.Location = new System.Drawing.Point(14, 16);
+            this._addButton.Name = "_addButton";
+            this._addButton.Size = new System.Drawing.Size(91, 20);
+            this._addButton.TabIndex = 1;
+            this._addButton.Text = "追加";
+            this._addButton.UseVisualStyleBackColor = true;
+            this._addButton.Click += new System.EventHandler(this._addButton_Click);
             // 
-            // remainingTimerChartControl1
+            // _remainingPieChart
             // 
-            this.remainingTimerChartControl1.BackColor = System.Drawing.Color.White;
-            this.remainingTimerChartControl1.Location = new System.Drawing.Point(49, 77);
-            this.remainingTimerChartControl1.Name = "remainingTimerChartControl1";
-            this.remainingTimerChartControl1.Size = new System.Drawing.Size(203, 216);
-            this.remainingTimerChartControl1.TabIndex = 1;
+            this._remainingPieChart.BackColor = System.Drawing.Color.White;
+            this._remainingPieChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._remainingPieChart.Location = new System.Drawing.Point(0, 0);
+            this._remainingPieChart.Name = "_remainingPieChart";
+            this._remainingPieChart.Size = new System.Drawing.Size(297, 305);
+            this._remainingPieChart.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(297, 305);
-            this.Controls.Add(this.remainingTimerChartControl1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this._remainingPieChart);
+            this.Controls.Add(this._addButton);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
         }
 
-        private Main.RemainTimer.RemainingTimerChartControl remainingTimerChartControl1;
+        private MainApp.RemainTimer.RemainingTimerChartControl _remainingPieChart;
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button _addButton;
 
         #endregion
     }

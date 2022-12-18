@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
     partial class RemainingTimeBarControl
     {

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using Main.PieChart;
+using MainApp.PieChart;
 
-namespace Main.RemainTimer
+namespace MainApp.RemainTimer
 {
     partial class RemainingTimerChartControl
     {
@@ -32,15 +32,14 @@ namespace Main.RemainTimer
         /// </summary>
         private void InitializeComponent()
         {
-            Main.PieChart.PieChartList pieChartList1 = new Main.PieChart.PieChartList();
-            this._pieChartControl = new Main.PieChart.PieChartControl();
+            MainApp.PieChart.PieChartList pieChartList1 = new MainApp.PieChart.PieChartList();
+            this._pieChartControl = new MainApp.PieChart.PieChartControl();
             this._timer = new System.Timers.Timer();
             ((System.ComponentModel.ISupportInitialize) (this._timer)).BeginInit();
             this.SuspendLayout();
             // 
             // _pieChartControl
             // 
-            this._pieChartControl.BackColor = System.Drawing.Color.Transparent;
             this._pieChartControl.Contents = pieChartList1;
             this._pieChartControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pieChartControl.Font = new System.Drawing.Font("メイリオ", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
@@ -70,7 +69,7 @@ namespace Main.RemainTimer
 
         private System.Timers.Timer _timer;
 
-        private Main.PieChart.PieChartControl _pieChartControl;
+        private MainApp.PieChart.PieChartControl _pieChartControl;
 
         #endregion
     }

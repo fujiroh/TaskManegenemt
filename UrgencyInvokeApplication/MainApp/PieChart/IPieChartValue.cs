@@ -1,4 +1,4 @@
-﻿namespace Main.PieChart
+﻿namespace MainApp.PieChart
 {
     public interface IPieChartValue
     {
