@@ -24,9 +24,19 @@ namespace MainApp.Evm.Content
             }
         }
 
+        public EvmValue GetAggregateValue(int idx)
+        {
+            EvmValue sum = EvmValue.Zero;
+            for (var i = 0; i <= idx; i++)
+            {
+                sum += _evmValues[i];
+            }
+            return sum;
+        }
+
         public EvmValueList()
         {
-            _evmValues = new List<EvmValue>();
+            _evmValues = new List<EvmValue> {EvmValue.Zero};
         }
 
         public EvmValueList(IEnumerable<EvmValue> evmValues)

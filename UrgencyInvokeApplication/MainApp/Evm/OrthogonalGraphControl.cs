@@ -27,9 +27,9 @@ namespace MainApp.Evm
                 var chartLegend = kv.Value.ToString();
                 _lineChartControl.Series.Add(chartLegend);
                 _lineChartControl.Series[chartLegend].ChartType = SeriesChartType.Line;
-                for (var i = 0; i < kv.Value.Count(); i++)
+                for (var idx = 0; idx < kv.Value.Count(); idx++)
                 {
-                    var yValue = kv.Value[i].ToHour();
+                    var yValue = kv.Value.GetAggregateValue(idx).ToHour();
                     _lineChartControl.Series[chartLegend].Points.AddY(yValue);
                 }
             }
@@ -43,7 +43,7 @@ namespace MainApp.Evm
 
         private class DummyEvmModel : EvmModel
         {
-            private const int POINT_COUNT = 10000;
+            private const int POINT_COUNT = 200;
             private const int RANDOM_MAX_VALUE = 3600000;
 
             private static Random rand = new Random(DateTime.Now.Millisecond);
@@ -60,7 +60,7 @@ namespace MainApp.Evm
 
             private static IEnumerable<EvmValue> CreateRandomEvmValues()
             {
-                for (var i = 0; i < POINT_COUNT; i++)
+                for (var i = 0; i < rand.Next(2,POINT_COUNT); i++)
                 {
                     yield return CreateRandomValue();
                 }
