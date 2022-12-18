@@ -12,6 +12,7 @@ namespace MainApp.Evm
         {
             InitializeComponent();
             SetInitialValue();
+            InitializeChart();
         }
 
         private void SetInitialValue()
@@ -20,9 +21,9 @@ namespace MainApp.Evm
                 _evmModel.GetMaxCount(), _evmModel.GetMaxAggregate().Second);
         }
 
-        private void SetModel()
+        private void InitializeChart()
         {
-            
+            _chartTest.Series.Clear();
         }
     }
 }

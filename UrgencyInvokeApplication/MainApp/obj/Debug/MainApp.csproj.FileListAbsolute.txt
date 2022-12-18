@@ -56,3 +56,4 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.CopyComplete
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.exe
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.pdb
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Evm.OrthogonalGraphControl.resources

@@ -104,6 +104,12 @@
             <DependentUpon>MainForm.cs</DependentUpon>
         </Compile>
         <Compile Include="MainController.cs" />
+        <Compile Include="ControlWindowBase.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="ControlWindowBase.Designer.cs">
+          <DependentUpon>ControlWindowBase.cs</DependentUpon>
+        </Compile>
         <Compile Include="PieChart\ControlPropertyProvider.cs" />
         <Compile Include="PieChart\IControlPropertyProvider.cs" />
         <Compile Include="PieChart\IPieChartContent.cs" />

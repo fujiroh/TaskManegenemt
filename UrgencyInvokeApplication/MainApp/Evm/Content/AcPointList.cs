@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MainApp.Evm.Content
+﻿namespace MainApp.Evm.Content
 {
     public class AcPointList : EvmValueList
     {
