@@ -14,15 +14,14 @@ namespace MainApp.Evm
         private readonly PvPointList _pvPointList;
         private readonly EvPointList _evPointList;
 
+        public Dictionary<EvmType, EvmValueList> Map { get; }
+
         public IObservable<Unit> ContentValueChangedObservable => _acPointList.ContentChangedObservable
             .Merge(_pvPointList.ContentChangedObservable)
             .Merge(_evPointList.ContentChangedObservable);
 
-        public EvmModel()
+        public EvmModel() : this(new EvPointList(), new PvPointList(), new AcPointList())
         {
-            _acPointList = new AcPointList();
-            _pvPointList = new PvPointList();
-            _evPointList = new EvPointList();
         }
 
         public EvmModel(EvPointList evPointList, PvPointList pvPointList, AcPointList acPointList)
@@ -30,6 +29,17 @@ namespace MainApp.Evm
             _evPointList = evPointList;
             _pvPointList = pvPointList;
             _acPointList = acPointList;
+            Map = CreateMap();
+        }
+
+        private Dictionary<EvmType, EvmValueList> CreateMap()
+        {
+            return new Dictionary<EvmType, EvmValueList>()
+            {
+                {EvmType.Ac, _acPointList},
+                {EvmType.Pv, _pvPointList},
+                {EvmType.Ev, _evPointList},
+            };
         }
 
         public int GetMaxCount()
@@ -39,24 +49,22 @@ namespace MainApp.Evm
 
         public EvmValue GetMaxAggregate()
         {
-            var acValue = _acPointList.GetAggregate();
-            var evValue = _evPointList.GetAggregate();
-            var pvValue = _pvPointList.GetAggregate();
-
-            return EvmValue.Max(acValue, evValue, pvValue);
+            return Map.Values.Aggregate(EvmValue.Zero, (current, value) => EvmValue.Max(current, value.GetAggregate()));
         }
 
         public IEnumerable<EvmValue> CreatePointSet(int idx)
         {
             try
             {
-                return new[] {_acPointList[idx], _evPointList[idx], _pvPointList[idx]};
+                return Map.Select(kv => kv.Value[idx]);
             }
             catch (IndexOutOfRangeException e)
             {
                 Debug.WriteLine(e);
-                return Enumerable.Empty<EvmValue>();
+                return CreateEmptySet();
             }
         }
+
+        public IEnumerable<EvmValue> CreateEmptySet() => Enumerable.Repeat(EvmValue.Zero, Map.Count);
     }
 }

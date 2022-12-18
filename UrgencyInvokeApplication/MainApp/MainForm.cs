@@ -9,11 +9,11 @@ namespace MainApp
         public MainForm()
         {
             InitializeComponent();
-            _remainingPieChart.Initialize(DateTime.Now, new DateTime(2022, 12, 17,17,20,0));
+            _remainingPieChart.Initialize(DateTime.Now, new DateTime(2022, 12,20,17,20,0));
             
             ControlWindowBase f = new ControlWindowBase();
             var orthogonalGraphControl = new OrthogonalGraphControl();
-            f.SetControl(orthogonalGraphControl);
+            f.SetInitialControl(orthogonalGraphControl);
             f.Show();
         }
 

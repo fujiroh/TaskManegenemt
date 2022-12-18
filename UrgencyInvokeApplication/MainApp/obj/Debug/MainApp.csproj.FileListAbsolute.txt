@@ -44,7 +44,6 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.SuggestedBindingRedirects.cache
-C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Graph.GraphControl.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.MainForm.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.PieChart.PieChartControl.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Properties.Resources.resources

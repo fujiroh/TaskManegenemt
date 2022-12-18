@@ -80,6 +80,7 @@
         <Compile Include="Evm\Content\EvmValueList.cs" />
         <Compile Include="Evm\Content\PvPointList.cs" />
         <Compile Include="Evm\EvmModel.cs" />
+        <Compile Include="Evm\EvmType.cs" />
         <Compile Include="Evm\IEditable.cs" />
         <Compile Include="Evm\OrthogonalGraphControl.cs">
           <SubType>UserControl</SubType>
@@ -91,12 +92,6 @@
         <Compile Include="Extension\GraphicExtension.cs" />
         <Compile Include="Extension\SizeExtension.cs" />
         <Compile Include="Extension\ValueAngleConverter.cs" />
-        <Compile Include="Graph\GraphControl.cs">
-          <SubType>UserControl</SubType>
-        </Compile>
-        <Compile Include="Graph\GraphControl.Designer.cs">
-          <DependentUpon>GraphControl.cs</DependentUpon>
-        </Compile>
         <Compile Include="MainForm.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -152,9 +147,6 @@
         <Compile Include="RemainTimer\TimeViewType.cs" />
         <EmbeddedResource Include="Evm\OrthogonalGraphControl.resx">
           <DependentUpon>OrthogonalGraphControl.cs</DependentUpon>
-        </EmbeddedResource>
-        <EmbeddedResource Include="Graph\GraphControl.resx">
-          <DependentUpon>GraphControl.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="MainForm.resx">
             <DependentUpon>MainForm.cs</DependentUpon>

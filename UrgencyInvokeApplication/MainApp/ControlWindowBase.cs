@@ -11,11 +11,11 @@ namespace MainApp
             InitializeComponent();
         }
 
-        public void SetControl(Control control)
+        public void SetInitialControl(Control control)
         {
             _control = control;
-            this.Controls.Add(_control);
-            this.Dock = DockStyle.Fill;
+            control.Dock = DockStyle.Fill;
+            Controls.Add(_control);
         }
     }
 }

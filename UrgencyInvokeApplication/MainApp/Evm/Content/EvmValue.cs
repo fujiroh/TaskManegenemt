@@ -6,6 +6,11 @@ namespace MainApp.Evm.Content
     {
         public int Second { get; }
         public double ToHour() => (double)Second / 3600;
+
+        public static EvmValue CreateFromSecond(int seconds)
+        {
+            return new EvmValue(seconds);
+        }
         
         public static EvmValue Zero => new EvmValue(0);
 
@@ -14,7 +19,7 @@ namespace MainApp.Evm.Content
             Second = 0;
         }
         
-        public EvmValue(int second)
+        private EvmValue(int second)
         {
             Second = second;
         }

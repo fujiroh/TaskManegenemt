@@ -7,6 +7,7 @@ namespace MainApp.PieChart
     public class PieDrawInfo
     {
         private static Color _FramePenColor = Color.Black;
+        private const float SHRINK_RATE = 0.9f;
         private GraphicsPath _graphicsPath;
 
         public static PieDrawInfo Create(
@@ -47,7 +48,9 @@ namespace MainApp.PieChart
 
         public void Draw(Graphics graphics)
         {
-            var topLeft = new Point(CenterPoint.X - Size.Width / 2, CenterPoint.Y - Size.Height / 2);
+            var shrunkWidth = Size.Width * SHRINK_RATE;
+            var shrunkHeight = Size.Height * SHRINK_RATE;
+            var topLeft = new PointF(CenterPoint.X - shrunkWidth / 2, CenterPoint.Y - shrunkHeight / 2);
 
             using (var brush = new SolidBrush(Color))
             using (var pens = new Pen(_FramePenColor))
@@ -56,15 +59,15 @@ namespace MainApp.PieChart
                     brush,
                     topLeft.X,
                     topLeft.Y,
-                    Size.Width,
-                    Size.Height,
+                    shrunkWidth,
+                    shrunkHeight,
                     (float) StartAngle,
                     (float) SweepAngle);
                 graphics.DrawPie(pens,
                     topLeft.X,
                     topLeft.Y,
-                    Size.Width,
-                    Size.Height,
+                    shrunkWidth,
+                    shrunkHeight,
                     (float) StartAngle,
                     (float) SweepAngle);
             }

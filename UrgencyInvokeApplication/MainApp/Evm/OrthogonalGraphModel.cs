@@ -2,12 +2,12 @@
 {
     public class OrthogonalGraphModel<T> where T : new()
     {
-        private readonly T[,] _list;
+        private readonly T[] _list;
 
-        public OrthogonalGraphModel(int horizonMax, int verticalMax)
+        public OrthogonalGraphModel(int horizonMax)
         {
-            _list = new T[horizonMax, verticalMax];
-            Initialize(horizonMax, verticalMax);
+            _list = new T[horizonMax];
+            Initialize(horizonMax);
         }
 
         public bool IsInRange(int horizon, int vertical)
@@ -15,14 +15,11 @@
             return 0 <= vertical && vertical < _list.GetLength(0) && 0 <= horizon && horizon < _list.GetLength(1);
         }
 
-        private void Initialize(int horizonMax, int verticalMax)
+        private void Initialize(int horizonMax)
         {
-            for (var i = 0; i < verticalMax; i++)
+            for (var idx = 0; idx < horizonMax; idx++)
             {
-                for (var j = 0; j < horizonMax; j++)
-                {
-                    _list[i, j] = new T();
-                }
+                _list[idx] = new T();
             }
         }
     }
