@@ -81,7 +81,6 @@
         <Compile Include="Evm\Content\PvPointList.cs" />
         <Compile Include="Evm\EvmModel.cs" />
         <Compile Include="Evm\IEditable.cs" />
-        <Compile Include="Evm\IEvmPoint.cs" />
         <Compile Include="Evm\OrthogonalGraphControl.cs">
           <SubType>UserControl</SubType>
         </Compile>
@@ -145,6 +144,9 @@
         </Compile>
         <Compile Include="RemainTimer\TimeContentFactory.cs" />
         <Compile Include="RemainTimer\TimeViewType.cs" />
+        <EmbeddedResource Include="Evm\OrthogonalGraphControl.resx">
+          <DependentUpon>OrthogonalGraphControl.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Graph\GraphControl.resx">
           <DependentUpon>GraphControl.cs</DependentUpon>
         </EmbeddedResource>

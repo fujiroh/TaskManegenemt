@@ -60,7 +60,6 @@ namespace MainApp.Evm.Content
             {
                 return false;
             }
-
             return v1.Equals(v2);
         }
 

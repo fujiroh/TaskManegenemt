@@ -7,7 +7,7 @@ namespace MainApp.Evm
     {
         private readonly EvmModel _evmModel = new EvmModel();
         private OrthogonalGraphModel<EvmValue> _orthogonalGraphModel;
-            
+
         public OrthogonalGraphControl()
         {
             InitializeComponent();
