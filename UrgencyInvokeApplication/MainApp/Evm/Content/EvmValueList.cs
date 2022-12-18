@@ -36,6 +36,10 @@ namespace MainApp.Evm.Content
 
         public EvmValue GetAggregate()
         {
+            if (_evmValues.Count == 0)
+            {
+                return EvmValue.Zero;
+            }
             return _evmValues.Aggregate((sum, v) => sum + v);
         }
 

@@ -52,7 +52,7 @@ namespace MainApp.Evm
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this._chartTest.Series.Add(series1);
-            this._chartTest.Size = new System.Drawing.Size(487, 272);
+            this._chartTest.Size = new System.Drawing.Size(974, 552);
             this._chartTest.TabIndex = 0;
             this._chartTest.Text = "chart1";
             // 
@@ -62,7 +62,7 @@ namespace MainApp.Evm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._chartTest);
             this.Name = "OrthogonalGraphControl";
-            this.Size = new System.Drawing.Size(487, 272);
+            this.Size = new System.Drawing.Size(974, 552);
             ((System.ComponentModel.ISupportInitialize) (this._chartTest)).EndInit();
             this.ResumeLayout(false);
         }

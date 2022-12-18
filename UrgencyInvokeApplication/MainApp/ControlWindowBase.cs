@@ -15,7 +15,7 @@ namespace MainApp
         {
             _control = control;
             this.Controls.Add(_control);
-            Dock = DockStyle.Fill;
+            this.Dock = DockStyle.Fill;
         }
     }
 }
