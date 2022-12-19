@@ -24,14 +24,21 @@ namespace MainApp.Evm
             _lineChartControl.ChartAreas.Add(new ChartArea("Evm_Area"));
             foreach (var kv in _evmModel.Map)
             {
-                var chartLegend = kv.Value.ToString();
-                _lineChartControl.Series.Add(chartLegend);
-                _lineChartControl.Series[chartLegend].ChartType = SeriesChartType.Line;
-                for (var idx = 0; idx < kv.Value.Count(); idx++)
-                {
-                    var yValue = kv.Value.GetAggregateValue(idx).ToHour();
-                    _lineChartControl.Series[chartLegend].Points.AddY(yValue);
-                }
+                SetInitialSeries(kv.Value);
+            }
+        }
+
+        private void SetInitialSeries(EvmValueList valueList)
+        {
+            var chartLegend = valueList.ToString();
+            _lineChartControl.Series.Add(chartLegend);
+            _lineChartControl.Series[chartLegend].ChartType = SeriesChartType.Line;
+            _lineChartControl.Series[chartLegend].Color = valueList.LegendColor;
+            _lineChartControl.Series[chartLegend].BorderWidth = 2;
+            for (var idx = 0; idx < valueList.Count(); idx++)
+            {
+                var yValue = valueList.GetAggregateValue(idx).ToHour();
+                _lineChartControl.Series[chartLegend].Points.AddY(yValue);
             }
         }
 

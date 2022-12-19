@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
@@ -12,6 +13,8 @@ namespace MainApp.Evm.Content
     {
         private readonly List<EvmValue> _evmValues;
         private readonly Subject<Unit> _subject = new Subject<Unit>();
+
+        public virtual Color LegendColor { get; set; } = Color.Black;
         public IObservable<Unit> ContentChangedObservable => _subject.AsObservable();
 
         public EvmValue this[int idx]
