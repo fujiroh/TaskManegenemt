@@ -57,9 +57,11 @@ namespace MainApp.RemainTimer
 
             public PieDrawInfo CreateDrawInfo(Point centerPoint, Size size, double startAngle, double sweepAngle)
             {
+                Size providedSize = _provider.ProvideSize();
+                var minEdge = Math.Min(providedSize.Height, providedSize.Width);
                 return PieDrawInfo.Create(
                     _provider.ProvideCenterPoint(),
-                    _provider.ProvideSize().RoundSquare(),
+                    new Size(minEdge, minEdge),
                     startAngle,
                     sweepAngle,
                     PieColor,

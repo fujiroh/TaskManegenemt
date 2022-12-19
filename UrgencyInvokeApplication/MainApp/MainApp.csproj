@@ -37,6 +37,9 @@
             <HintPath>..\packages\Maybe.1.2.0\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\Hazzik.Maybe.dll</HintPath>
             <Private>True</Private>
         </Reference>
+        <Reference Include="MainApp">
+          <HintPath>bin\Debug\MainApp.exe</HintPath>
+        </Reference>
         <Reference Include="MainApplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>bin\Debug\MainApplication.exe</HintPath>
         </Reference>
@@ -90,8 +93,6 @@
         </Compile>
         <Compile Include="Evm\OrthogonalGraphModel.cs" />
         <Compile Include="Extension\GraphicExtension.cs" />
-        <Compile Include="Extension\SizeExtension.cs" />
-        <Compile Include="Extension\ValueAngleConverter.cs" />
         <Compile Include="MainForm.cs">
             <SubType>Form</SubType>
         </Compile>

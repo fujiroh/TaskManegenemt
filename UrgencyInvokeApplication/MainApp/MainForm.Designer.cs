@@ -31,45 +31,18 @@ namespace MainApp
         /// </summary>
         private void InitializeComponent()
         {
-            this._addButton = new System.Windows.Forms.Button();
-            this._remainingPieChart = new MainApp.RemainTimer.RemainingTimerChartControl();
             this.SuspendLayout();
-            // 
-            // _addButton
-            // 
-            this._addButton.Location = new System.Drawing.Point(14, 16);
-            this._addButton.Name = "_addButton";
-            this._addButton.Size = new System.Drawing.Size(91, 20);
-            this._addButton.TabIndex = 1;
-            this._addButton.Text = "追加";
-            this._addButton.UseVisualStyleBackColor = true;
-            this._addButton.Click += new System.EventHandler(this._addButton_Click);
-            // 
-            // _remainingPieChart
-            // 
-            this._remainingPieChart.BackColor = System.Drawing.Color.White;
-            this._remainingPieChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._remainingPieChart.Location = new System.Drawing.Point(0, 0);
-            this._remainingPieChart.Name = "_remainingPieChart";
-            this._remainingPieChart.Size = new System.Drawing.Size(297, 305);
-            this._remainingPieChart.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 305);
-            this.Controls.Add(this._remainingPieChart);
-            this.Controls.Add(this._addButton);
+            this.ClientSize = new System.Drawing.Size(791, 502);
             this.DoubleBuffered = true;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
         }
-
-        private MainApp.RemainTimer.RemainingTimerChartControl _remainingPieChart;
-
-        private System.Windows.Forms.Button _addButton;
 
         #endregion
     }

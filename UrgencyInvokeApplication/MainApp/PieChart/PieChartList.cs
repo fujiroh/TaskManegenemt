@@ -41,7 +41,7 @@ namespace MainApp.PieChart
         private double GetSweepAngle(double value)
         {
             var totalValue = GetTotalValue();
-            return value.Convert(totalValue);
+            return value / totalValue * 360;
         }
 
         public void AddContent(IEnumerable<IPieChartContent> values)
