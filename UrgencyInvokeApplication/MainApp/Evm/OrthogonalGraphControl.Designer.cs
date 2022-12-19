@@ -39,6 +39,7 @@ namespace MainApp.Evm
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this._lineChartControl = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this._contextMenu = new System.Windows.Forms.ContextMenu();
             ((System.ComponentModel.ISupportInitialize) (this._lineChartControl)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,8 @@ namespace MainApp.Evm
             ((System.ComponentModel.ISupportInitialize) (this._lineChartControl)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.ContextMenu _contextMenu;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart _chartTest;
 

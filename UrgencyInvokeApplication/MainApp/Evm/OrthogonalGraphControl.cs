@@ -67,7 +67,7 @@ namespace MainApp.Evm
                 
             }
         }
-        
+
         private class DummyEvmModel : EvmModel
         {
             private const int POINT_COUNT = 300;
