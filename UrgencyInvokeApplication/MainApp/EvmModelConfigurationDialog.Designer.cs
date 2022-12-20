@@ -42,14 +42,16 @@ namespace MainApp
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._titleText = new System.Windows.Forms.RichTextBox();
             this._pvSettingGroupBox = new System.Windows.Forms.GroupBox();
+            this.pvSettingControl1 = new MainApp.PvSettingControl();
             this._startDayGroupBox.SuspendLayout();
             this._limitDateGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this._pvSettingGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // _btnCreate
             // 
-            this._btnCreate.Location = new System.Drawing.Point(389, 249);
+            this._btnCreate.Location = new System.Drawing.Point(262, 383);
             this._btnCreate.Name = "_btnCreate";
             this._btnCreate.Size = new System.Drawing.Size(96, 28);
             this._btnCreate.TabIndex = 0;
@@ -58,7 +60,7 @@ namespace MainApp
             // 
             // _cancelBtn
             // 
-            this._cancelBtn.Location = new System.Drawing.Point(492, 249);
+            this._cancelBtn.Location = new System.Drawing.Point(364, 383);
             this._cancelBtn.Name = "_cancelBtn";
             this._cancelBtn.Size = new System.Drawing.Size(96, 28);
             this._cancelBtn.TabIndex = 1;
@@ -67,7 +69,7 @@ namespace MainApp
             // 
             // _monthCalendar
             // 
-            this._monthCalendar.Location = new System.Drawing.Point(389, 49);
+            this._monthCalendar.Location = new System.Drawing.Point(250, 91);
             this._monthCalendar.Name = "_monthCalendar";
             this._monthCalendar.TabIndex = 3;
             // 
@@ -77,7 +79,7 @@ namespace MainApp
             this._startDayGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._startDayGroupBox.Location = new System.Drawing.Point(3, 3);
             this._startDayGroupBox.Name = "_startDayGroupBox";
-            this._startDayGroupBox.Size = new System.Drawing.Size(168, 39);
+            this._startDayGroupBox.Size = new System.Drawing.Size(204, 39);
             this._startDayGroupBox.TabIndex = 4;
             this._startDayGroupBox.TabStop = false;
             this._startDayGroupBox.Text = "開始日";
@@ -87,16 +89,16 @@ namespace MainApp
             this._startDateTimePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this._startDateTimePicker.Location = new System.Drawing.Point(3, 15);
             this._startDateTimePicker.Name = "_startDateTimePicker";
-            this._startDateTimePicker.Size = new System.Drawing.Size(162, 19);
+            this._startDateTimePicker.Size = new System.Drawing.Size(198, 19);
             this._startDateTimePicker.TabIndex = 0;
             // 
             // _limitDateGroupBox
             // 
             this._limitDateGroupBox.Controls.Add(this._limitDateTimePicker1);
             this._limitDateGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._limitDateGroupBox.Location = new System.Drawing.Point(197, 3);
+            this._limitDateGroupBox.Location = new System.Drawing.Point(233, 3);
             this._limitDateGroupBox.Name = "_limitDateGroupBox";
-            this._limitDateGroupBox.Size = new System.Drawing.Size(169, 39);
+            this._limitDateGroupBox.Size = new System.Drawing.Size(205, 39);
             this._limitDateGroupBox.TabIndex = 5;
             this._limitDateGroupBox.TabStop = false;
             this._limitDateGroupBox.Text = "終了日";
@@ -106,13 +108,13 @@ namespace MainApp
             this._limitDateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._limitDateTimePicker1.Location = new System.Drawing.Point(3, 15);
             this._limitDateTimePicker1.Name = "_limitDateTimePicker1";
-            this._limitDateTimePicker1.Size = new System.Drawing.Size(163, 19);
+            this._limitDateTimePicker1.Size = new System.Drawing.Size(199, 19);
             this._limitDateTimePicker1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(177, 0);
+            this.label1.Location = new System.Drawing.Point(213, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(14, 45);
             this.label1.TabIndex = 6;
@@ -128,35 +130,45 @@ namespace MainApp
             this.tableLayoutPanel1.Controls.Add(this._startDayGroupBox, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this._limitDateGroupBox, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 49);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 34);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(369, 45);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(441, 45);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // _titleText
             // 
             this._titleText.Location = new System.Drawing.Point(12, 6);
             this._titleText.Name = "_titleText";
-            this._titleText.Size = new System.Drawing.Size(576, 31);
+            this._titleText.Size = new System.Drawing.Size(448, 22);
             this._titleText.TabIndex = 8;
             this._titleText.Text = "";
             // 
             // _pvSettingGroupBox
             // 
-            this._pvSettingGroupBox.Location = new System.Drawing.Point(12, 100);
+            this._pvSettingGroupBox.Controls.Add(this.pvSettingControl1);
+            this._pvSettingGroupBox.Location = new System.Drawing.Point(12, 85);
             this._pvSettingGroupBox.Name = "_pvSettingGroupBox";
-            this._pvSettingGroupBox.Size = new System.Drawing.Size(369, 177);
+            this._pvSettingGroupBox.Size = new System.Drawing.Size(229, 326);
             this._pvSettingGroupBox.TabIndex = 10;
             this._pvSettingGroupBox.TabStop = false;
             this._pvSettingGroupBox.Text = "PV設定";
+            // 
+            // pvSettingControl1
+            // 
+            this.pvSettingControl1.BackColor = System.Drawing.Color.White;
+            this.pvSettingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pvSettingControl1.Location = new System.Drawing.Point(3, 15);
+            this.pvSettingControl1.Name = "pvSettingControl1";
+            this.pvSettingControl1.Size = new System.Drawing.Size(223, 308);
+            this.pvSettingControl1.TabIndex = 0;
             // 
             // EvmModelConfigurationDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 289);
+            this.ClientSize = new System.Drawing.Size(465, 417);
             this.Controls.Add(this._pvSettingGroupBox);
             this.Controls.Add(this._titleText);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -168,8 +180,11 @@ namespace MainApp
             this._startDayGroupBox.ResumeLayout(false);
             this._limitDateGroupBox.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this._pvSettingGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private MainApp.PvSettingControl pvSettingControl1;
 
         private System.Windows.Forms.DateTimePicker _limitDateTimePicker1;
 

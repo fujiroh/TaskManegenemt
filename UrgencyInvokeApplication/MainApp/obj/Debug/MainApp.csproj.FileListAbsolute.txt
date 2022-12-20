@@ -27,7 +27,6 @@ C:\Users\User\Desktop\git\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Rem
 C:\Users\User\Desktop\git\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.RemainTimer.RemainingTimerChartControl.resources
 C:\Users\User\Desktop\git\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.RemainTimer.RemainingTimerControl.resources
 C:\Users\User\Desktop\git\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Graph.GraphControl.resources
-C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.SuggestedBindingRedirects.cache
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.Evm.OrthogonalGraphControl.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.MainForm.resources
@@ -55,3 +54,6 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.pdb
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.EvmModelConfigurationDialog.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.PvSettingControl.resources
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.DateAndNumericControl.resources
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.EachDatePvSetControl.resources
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache

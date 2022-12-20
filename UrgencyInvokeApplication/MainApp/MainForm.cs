@@ -8,6 +8,8 @@ namespace MainApp
         public MainForm()
         {
             InitializeComponent();
+            EvmModelConfigurationDialog d = new EvmModelConfigurationDialog();
+            d.Show();
             var orthogonalGraphControl = new OrthogonalGraphControl();
             Controls.Add(orthogonalGraphControl);
             orthogonalGraphControl.Dock = DockStyle.Fill;
