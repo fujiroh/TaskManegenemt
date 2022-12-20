@@ -53,3 +53,5 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\bin\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.CopyComplete
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.exe
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.pdb
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.EvmModelConfigurationDialog.resources
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.PvSettingControl.resources

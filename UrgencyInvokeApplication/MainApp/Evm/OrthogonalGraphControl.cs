@@ -64,7 +64,6 @@ namespace MainApp.Evm
         {
             using (_subscribe)
             {
-                
             }
         }
 
