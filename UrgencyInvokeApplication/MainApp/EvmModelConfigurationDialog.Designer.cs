@@ -42,7 +42,7 @@ namespace MainApp
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._titleText = new System.Windows.Forms.RichTextBox();
             this._pvSettingGroupBox = new System.Windows.Forms.GroupBox();
-            this.pvSettingControl1 = new MainApp.PvSettingControl();
+            this._pvSettingControl = new MainApp.PvSettingControl();
             this._startDayGroupBox.SuspendLayout();
             this._limitDateGroupBox.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -51,6 +51,7 @@ namespace MainApp
             // 
             // _btnCreate
             // 
+            this._btnCreate.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._btnCreate.Location = new System.Drawing.Point(262, 383);
             this._btnCreate.Name = "_btnCreate";
             this._btnCreate.Size = new System.Drawing.Size(96, 28);
@@ -60,6 +61,7 @@ namespace MainApp
             // 
             // _cancelBtn
             // 
+            this._cancelBtn.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._cancelBtn.Location = new System.Drawing.Point(364, 383);
             this._cancelBtn.Name = "_cancelBtn";
             this._cancelBtn.Size = new System.Drawing.Size(96, 28);
@@ -147,7 +149,7 @@ namespace MainApp
             // 
             // _pvSettingGroupBox
             // 
-            this._pvSettingGroupBox.Controls.Add(this.pvSettingControl1);
+            this._pvSettingGroupBox.Controls.Add(this._pvSettingControl);
             this._pvSettingGroupBox.Location = new System.Drawing.Point(12, 85);
             this._pvSettingGroupBox.Name = "_pvSettingGroupBox";
             this._pvSettingGroupBox.Size = new System.Drawing.Size(229, 326);
@@ -155,14 +157,14 @@ namespace MainApp
             this._pvSettingGroupBox.TabStop = false;
             this._pvSettingGroupBox.Text = "PV設定";
             // 
-            // pvSettingControl1
+            // _pvSettingControl
             // 
-            this.pvSettingControl1.BackColor = System.Drawing.Color.White;
-            this.pvSettingControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pvSettingControl1.Location = new System.Drawing.Point(3, 15);
-            this.pvSettingControl1.Name = "pvSettingControl1";
-            this.pvSettingControl1.Size = new System.Drawing.Size(223, 308);
-            this.pvSettingControl1.TabIndex = 0;
+            this._pvSettingControl.BackColor = System.Drawing.Color.White;
+            this._pvSettingControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._pvSettingControl.Location = new System.Drawing.Point(3, 15);
+            this._pvSettingControl.Name = "_pvSettingControl";
+            this._pvSettingControl.Size = new System.Drawing.Size(223, 308);
+            this._pvSettingControl.TabIndex = 0;
             // 
             // EvmModelConfigurationDialog
             // 
@@ -184,7 +186,7 @@ namespace MainApp
             this.ResumeLayout(false);
         }
 
-        private MainApp.PvSettingControl pvSettingControl1;
+        private MainApp.PvSettingControl _pvSettingControl;
 
         private System.Windows.Forms.DateTimePicker _limitDateTimePicker1;
 

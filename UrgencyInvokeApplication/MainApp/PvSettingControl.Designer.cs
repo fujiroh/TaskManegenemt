@@ -15,6 +15,10 @@ namespace MainApp
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                DisposeInternal();
+            }
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -31,32 +35,20 @@ namespace MainApp
         /// </summary>
         private void InitializeComponent()
         {
-            this._pvNumeric = new System.Windows.Forms.NumericUpDown();
             this._pvAllSetAtOnceCheckBox = new System.Windows.Forms.CheckBox();
             this._pvSetEachDayCheckBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this._pvLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this._setAtOnceTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridTextBoxColumn1 = new System.Windows.Forms.DataGridTextBoxColumn();
-            this.eachDatePvSetControl1 = new MainApp.EachDatePvSetControl();
+            this._eachDatePvSetControl = new MainApp.EachDatePvSetControl();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize) (this._pvNumeric)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this._setAtOnceTableLayout.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _pvNumeric
-            // 
-            this._pvNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._pvNumeric.Location = new System.Drawing.Point(38, 3);
-            this._pvNumeric.Name = "_pvNumeric";
-            this._pvNumeric.Size = new System.Drawing.Size(84, 19);
-            this._pvNumeric.TabIndex = 0;
-            // 
             // _pvAllSetAtOnceCheckBox
             // 
+            this._pvAllSetAtOnceCheckBox.Checked = true;
+            this._pvAllSetAtOnceCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this._pvAllSetAtOnceCheckBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pvAllSetAtOnceCheckBox.Location = new System.Drawing.Point(3, 3);
             this._pvAllSetAtOnceCheckBox.Name = "_pvAllSetAtOnceCheckBox";
@@ -90,72 +82,34 @@ namespace MainApp
             this.tableLayoutPanel1.Size = new System.Drawing.Size(268, 35);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
-            // _pvLabel
-            // 
-            this._pvLabel.AutoSize = true;
-            this._pvLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._pvLabel.Font = new System.Drawing.Font("Meiryo UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
-            this._pvLabel.ForeColor = System.Drawing.Color.Blue;
-            this._pvLabel.Location = new System.Drawing.Point(3, 0);
-            this._pvLabel.Name = "_pvLabel";
-            this._pvLabel.Size = new System.Drawing.Size(29, 26);
-            this._pvLabel.TabIndex = 5;
-            this._pvLabel.Text = "PV";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Meiryo UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (128)));
-            this.label1.Location = new System.Drawing.Point(128, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 26);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "/ 日";
-            // 
-            // _setAtOnceTableLayout
-            // 
-            this._setAtOnceTableLayout.ColumnCount = 3;
-            this._setAtOnceTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this._setAtOnceTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._setAtOnceTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this._setAtOnceTableLayout.Controls.Add(this.label1, 2, 0);
-            this._setAtOnceTableLayout.Controls.Add(this._pvLabel, 0, 0);
-            this._setAtOnceTableLayout.Controls.Add(this._pvNumeric, 1, 0);
-            this._setAtOnceTableLayout.Location = new System.Drawing.Point(3, 3);
-            this._setAtOnceTableLayout.Name = "_setAtOnceTableLayout";
-            this._setAtOnceTableLayout.RowCount = 1;
-            this._setAtOnceTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._setAtOnceTableLayout.Size = new System.Drawing.Size(168, 26);
-            this._setAtOnceTableLayout.TabIndex = 7;
-            // 
             // dataGridTextBoxColumn1
             // 
             this.dataGridTextBoxColumn1.Format = "";
             this.dataGridTextBoxColumn1.FormatInfo = null;
             this.dataGridTextBoxColumn1.Width = -1;
             // 
-            // eachDatePvSetControl1
+            // _eachDatePvSetControl
             // 
-            this.eachDatePvSetControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.eachDatePvSetControl1.Location = new System.Drawing.Point(3, 35);
-            this.eachDatePvSetControl1.Name = "eachDatePvSetControl1";
-            this.eachDatePvSetControl1.Size = new System.Drawing.Size(262, 226);
-            this.eachDatePvSetControl1.TabIndex = 8;
+            this._eachDatePvSetControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._eachDatePvSetControl.Location = new System.Drawing.Point(3, 3);
+            this._eachDatePvSetControl.Name = "_eachDatePvSetControl";
+            this._eachDatePvSetControl.Size = new System.Drawing.Size(262, 284);
+            this._eachDatePvSetControl.TabIndex = 8;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this._setAtOnceTableLayout, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.eachDatePvSetControl1, 0, 1);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this._eachDatePvSetControl, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 35);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 232F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(268, 264);
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(268, 290);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
             // PvSettingControl
@@ -166,31 +120,22 @@ namespace MainApp
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PvSettingControl";
-            this.Size = new System.Drawing.Size(268, 299);
-            ((System.ComponentModel.ISupportInitialize) (this._pvNumeric)).EndInit();
+            this.Size = new System.Drawing.Size(268, 325);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this._setAtOnceTableLayout.ResumeLayout(false);
-            this._setAtOnceTableLayout.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
-        private MainApp.EachDatePvSetControl eachDatePvSetControl1;
+        private MainApp.EachDatePvSetControl _eachDatePvSetControl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 
         private System.Windows.Forms.DataGridTextBoxColumn dataGridTextBoxColumn1;
-
-        private System.Windows.Forms.TableLayoutPanel _setAtOnceTableLayout;
-
-        private System.Windows.Forms.Label label1;
-
-        private System.Windows.Forms.Label _pvLabel;
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 
         private System.Windows.Forms.CheckBox _pvAllSetAtOnceCheckBox;
 
-        private System.Windows.Forms.NumericUpDown _pvNumeric;
         private System.Windows.Forms.CheckBox _pvSetEachDayCheckBox;
 
         #endregion

@@ -33,8 +33,9 @@ namespace MainApp
         {
             this._dateLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this._valueText = new System.Windows.Forms.TextBox();
+            this._pvNumeric = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this._pvNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // _dateLabel
@@ -43,7 +44,7 @@ namespace MainApp
             this._dateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dateLabel.Location = new System.Drawing.Point(3, 0);
             this._dateLabel.Name = "_dateLabel";
-            this._dateLabel.Size = new System.Drawing.Size(44, 32);
+            this._dateLabel.Size = new System.Drawing.Size(79, 32);
             this._dateLabel.TabIndex = 1;
             this._dateLabel.Text = "label1";
             this._dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -51,26 +52,29 @@ namespace MainApp
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this._dateLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this._valueText, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this._pvNumeric, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(253, 32);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // _valueText
+            // _pvNumeric
             // 
-            this._valueText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._valueText.Location = new System.Drawing.Point(53, 3);
-            this._valueText.Name = "_valueText";
-            this._valueText.Size = new System.Drawing.Size(197, 19);
-            this._valueText.TabIndex = 2;
-            this._valueText.TextChanged += new System.EventHandler(this._valueText_TextChanged);
+            this._pvNumeric.DecimalPlaces = 2;
+            this._pvNumeric.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._pvNumeric.Increment = new decimal(new int[] {25, 0, 0, 131072});
+            this._pvNumeric.Location = new System.Drawing.Point(88, 3);
+            this._pvNumeric.Name = "_pvNumeric";
+            this._pvNumeric.Size = new System.Drawing.Size(162, 19);
+            this._pvNumeric.TabIndex = 2;
+            this._pvNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this._pvNumeric.ValueChanged += new System.EventHandler(this._pvNumeric_ValueChanged);
             // 
             // DateAndNumericControl
             // 
@@ -80,14 +84,15 @@ namespace MainApp
             this.Name = "DateAndNumericControl";
             this.Size = new System.Drawing.Size(253, 32);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this._pvNumeric)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.NumericUpDown _pvNumeric;
 
         #endregion
 
         private System.Windows.Forms.Label _dateLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox _valueText;
     }
 }
