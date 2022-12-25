@@ -10,15 +10,12 @@ namespace MainApp
         private readonly ToggleChanger _toggleChanger;
         private readonly IDisposable _subscribe;
         private bool _SetAllAtOnce => _pvAllSetAtOnceCheckBox.Checked;
-        
-        public IDictionary<DayOfWeek, double> PvValueMap { get; }
+
+        public IDictionary<DayOfWeek, DateAndNumericControl> PvValueMap => _eachDatePvSetControl.Map;
 
         public PvSettingControl()
         {
             InitializeComponent();
-
-            var enumLength = Enum.GetValues(typeof(DayOfWeek)).Length;
-            PvValueMap = Enumerable.Range(0, enumLength).ToDictionary(x => (DayOfWeek) x, _ => 0.0);
             _subscribe = _eachDatePvSetControl.ValueChangedObservable.Subscribe(SetPvValue);
             _toggleChanger = new ToggleChanger(new[] {_pvAllSetAtOnceCheckBox, _pvSetEachDayCheckBox});
         }

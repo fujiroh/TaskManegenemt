@@ -10,14 +10,18 @@ namespace MainApp.Evm
 {
     public partial class OrthogonalGraphControl : UserControl
     {
-        private readonly EvmModel _evmModel;
+        private EvmModel _evmModel = new EvmModel();
         private readonly IDisposable _subscribe;
 
         public OrthogonalGraphControl()
         {
             InitializeComponent();
-            _evmModel = DummyEvmModel.CreateDummy();
             _subscribe = CreateSubscriber();
+        }
+
+        public void SetModelAndInitialize(EvmModel evmModel)
+        {
+            _evmModel = evmModel;
             SetInitialValue();
         }
 
@@ -28,11 +32,11 @@ namespace MainApp.Evm
             _lineChartControl.ChartAreas.Add(new ChartArea("Evm_Area"));
             foreach (var kv in _evmModel.Map)
             {
-                SetInitialSeries(kv.Value);
+                InitializeSeries(kv.Value);
             }
         }
 
-        private void SetInitialSeries(EvmValueList valueList)
+        private void InitializeSeries(EvmValueList valueList)
         {
             // Seriesパラメータの設定
             var chartLegend = valueList.ToString();
@@ -40,7 +44,6 @@ namespace MainApp.Evm
             _lineChartControl.Series[chartLegend].ChartType = SeriesChartType.Line;
             _lineChartControl.Series[chartLegend].Color = valueList.LegendColor;
             _lineChartControl.Series[chartLegend].BorderWidth = 3;
-            
             // 値を追加
             for (var idx = 0; idx < valueList.Count(); idx++)
             {
@@ -73,8 +76,6 @@ namespace MainApp.Evm
             private const int RANDOM_MAX_VALUE = 36000;
 
             private static Random rand = new Random(DateTime.Now.Millisecond);
-
-            public static EvmModel Instance { get; } = new DummyEvmModel();
 
             public static EvmModel CreateDummy()
             {

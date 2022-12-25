@@ -57,3 +57,4 @@ C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.DateAndNumericControl.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.EachDatePvSetControl.resources
 C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\TaskManegenemt\UrgencyInvokeApplication\MainApp\obj\Debug\MainApp.ControlWindowBase.resources

@@ -172,6 +172,9 @@
         <Compile Include="RemainTimer\TimeContentFactory.cs" />
         <Compile Include="RemainTimer\TimeViewType.cs" />
         <Compile Include="ToggleChanger.cs" />
+        <EmbeddedResource Include="ControlWindowBase.resx">
+          <DependentUpon>ControlWindowBase.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="DateAndNumericControl.resx">
           <DependentUpon>DateAndNumericControl.cs</DependentUpon>
         </EmbeddedResource>

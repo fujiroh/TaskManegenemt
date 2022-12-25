@@ -73,9 +73,6 @@ namespace MainApp.Evm
         }
 
         private System.Windows.Forms.ContextMenu _contextMenu;
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart _chartTest;
-
         private System.Windows.Forms.DataVisualization.Charting.Chart _lineChartControl;
 
         #endregion

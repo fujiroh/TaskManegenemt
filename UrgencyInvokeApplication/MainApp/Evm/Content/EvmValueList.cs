@@ -13,7 +13,6 @@ namespace MainApp.Evm.Content
     {
         private readonly List<EvmValue> _evmValues;
         private readonly Subject<Unit> _subject = new Subject<Unit>();
-
         public virtual Color LegendColor { get; set; } = Color.Black;
         public IObservable<Unit> ContentChangedObservable => _subject.AsObservable();
 
