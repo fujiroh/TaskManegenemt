@@ -2,17 +2,13 @@
 using System.Windows.Forms;
 using Hazzik.Maybe;
 using MainApp.Evm;
-using MainApp.Evm.Content;
 
 namespace MainApp
 {
     public class MainController
     {
-        private readonly List<EvmModel> _evmModelStore;
-
         public MainController()
         {
-            _evmModelStore = new List<EvmModel>();
         }
 
         public void CreateNewEvm()
@@ -23,8 +19,8 @@ namespace MainApp
                 return;
             }
             var configure = mayBeConfigure.GetValueOrDefault();
-            var evmModel = new EvmModel(new EvPointList(), configure.PvValueList, new AcPointList());
-            _evmModelStore.Add(evmModel);
+            var evmModel = EvmModel.Create(configure);
+            
             using (ControlWindowBase dlg = new ControlWindowBase())
             {
                 var orthogonalGraphControl = new OrthogonalGraphControl();
@@ -42,7 +38,6 @@ namespace MainApp
                 {
                     return new Maybe<EvmModelConfigureResult>(dlg.CreateResult());
                 }
-
                 return Maybe<EvmModelConfigureResult>.Nothing;
             }
         }

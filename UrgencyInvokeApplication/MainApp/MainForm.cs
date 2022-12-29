@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace MainApp
 {
@@ -8,6 +9,12 @@ namespace MainApp
         public MainForm()
         {
             InitializeComponent();
+            AcTimerDialog d = new AcTimerDialog();
+            d.ShowDialog();
+        }
+
+        private void _menuFileNewCreate_Click(object sender, EventArgs e)
+        {
             _controller.CreateNewEvm();
         }
     }

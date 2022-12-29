@@ -22,7 +22,7 @@ namespace MainApp.Evm
         public void SetModelAndInitialize(EvmModel evmModel)
         {
             _evmModel = evmModel;
-            SetInitialValue();
+            SetInitialValue();  
         }
 
         private void SetInitialValue()
@@ -44,11 +44,13 @@ namespace MainApp.Evm
             _lineChartControl.Series[chartLegend].ChartType = SeriesChartType.Line;
             _lineChartControl.Series[chartLegend].Color = valueList.LegendColor;
             _lineChartControl.Series[chartLegend].BorderWidth = 3;
+            _lineChartControl.Series[chartLegend].XValueType = ChartValueType.Date;
+            var startDate = Math.Floor(_evmModel.Configure.Start.ToOADate());
             // 値を追加
             for (var idx = 0; idx < valueList.Count(); idx++)
             {
                 var yValue = valueList.GetAggregateValue(idx).ToHour();
-                _lineChartControl.Series[chartLegend].Points.AddY(yValue);
+                _lineChartControl.Series[chartLegend].Points.AddXY(startDate + idx, yValue);
             }
         }
 
@@ -60,7 +62,7 @@ namespace MainApp.Evm
 
         private IDisposable CreateSubscriber()
         {
-            return new CompositeDisposable(_evmModel.ContentValueChangedObservable.Subscribe( _ => Invalidate()));
+            return new CompositeDisposable(_evmModel.ContentValueChangedObservable.Subscribe(_ => Invalidate()));
         }
 
         private void DisposeInternal()
