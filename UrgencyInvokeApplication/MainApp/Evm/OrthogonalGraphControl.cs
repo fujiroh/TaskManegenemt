@@ -45,7 +45,7 @@ namespace MainApp.Evm
             _lineChartControl.Series[chartLegend].Color = valueList.LegendColor;
             _lineChartControl.Series[chartLegend].BorderWidth = 3;
             _lineChartControl.Series[chartLegend].XValueType = ChartValueType.Date;
-            var startDate = Math.Floor(_evmModel.Configure.Start.ToOADate());
+            var startDate = Math.Floor(_evmModel.StartDate.ToOADate());
             // 値を追加
             for (var idx = 0; idx < valueList.Count(); idx++)
             {

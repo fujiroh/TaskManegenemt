@@ -98,5 +98,10 @@ namespace MainApp.Evm.Content
         {
             return GetEnumerator();
         }
+
+        public string GetInfo()
+        {
+            return ToString() + ":" + GetAggregate();
+        }
     }
 }

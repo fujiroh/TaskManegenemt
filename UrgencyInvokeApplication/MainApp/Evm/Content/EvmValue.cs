@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MainApp.Evm.Content
 {
@@ -19,10 +20,6 @@ namespace MainApp.Evm.Content
         
         public static EvmValue Zero => new EvmValue(0);
 
-        public EvmValue()
-        {
-        }
-        
         private EvmValue(int second)
         {
             Second = second;
@@ -95,6 +92,11 @@ namespace MainApp.Evm.Content
         public override int GetHashCode()
         {
             return Second;
+        }
+
+        public override string ToString()
+        {
+            return  ToHour().ToString(CultureInfo.InvariantCulture) + "h";
         }
     }
 }

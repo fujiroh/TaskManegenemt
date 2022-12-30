@@ -9,8 +9,6 @@ namespace MainApp
         public MainForm()
         {
             InitializeComponent();
-            AcTimerDialog d = new AcTimerDialog();
-            d.ShowDialog();
         }
 
         private void _menuFileNewCreate_Click(object sender, EventArgs e)

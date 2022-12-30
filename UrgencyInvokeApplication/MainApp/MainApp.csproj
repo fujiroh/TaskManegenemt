@@ -265,6 +265,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Resources\_2022_12_30_04h40_29.png" />
+      <Content Include="Resources\_2022_12_30_04h40_291.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

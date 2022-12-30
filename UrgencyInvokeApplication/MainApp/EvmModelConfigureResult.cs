@@ -37,6 +37,12 @@ namespace MainApp
             return new EvmModelConfigureResult(title, start, end, pvPointList);
         }
 
+        public static EvmModelConfigureResult Default => new EvmModelConfigureResult(
+                "", 
+                DateTime.Today, 
+                DateTime.Today.Add(TimeSpan.FromDays(1)),
+                new PvPointList());
+
         private EvmModelConfigureResult(string title, DateTime start, DateTime end, PvPointList pvValueList)
         {
             Title = title;
