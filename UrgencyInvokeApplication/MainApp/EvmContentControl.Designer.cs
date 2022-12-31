@@ -69,14 +69,17 @@ namespace MainApp
             // 
             // _infoText
             // 
-            this._infoText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this._infoText.BackColor = System.Drawing.Color.White;
+            this._infoText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this._infoText.Dock = System.Windows.Forms.DockStyle.Fill;
             this._infoText.Location = new System.Drawing.Point(0, 32);
             this._infoText.Margin = new System.Windows.Forms.Padding(0);
             this._infoText.Name = "_infoText";
+            this._infoText.ReadOnly = true;
+            this._infoText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this._infoText.Size = new System.Drawing.Size(276, 83);
             this._infoText.TabIndex = 1;
-            this._infoText.Text = "a";
+            this._infoText.Text = "Dummy";
             // 
             // EvmContentControl
             // 
@@ -86,6 +89,7 @@ namespace MainApp
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EvmContentControl";
             this.Size = new System.Drawing.Size(276, 115);
+            this.Load += new System.EventHandler(this.EvmContentControl_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }

@@ -62,7 +62,6 @@ namespace MainApp
             this.検索SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.バージョン情報AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.evmContentControl1 = new MainApp.EvmContentControl();
             this._menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -273,21 +272,11 @@ namespace MainApp
             this.バージョン情報AToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.バージョン情報AToolStripMenuItem.Text = "バージョン情報(&A)...";
             // 
-            // evmContentControl1
-            // 
-            this.evmContentControl1.BackColor = System.Drawing.Color.White;
-            this.evmContentControl1.EvmModel = null;
-            this.evmContentControl1.Location = new System.Drawing.Point(12, 37);
-            this.evmContentControl1.Name = "evmContentControl1";
-            this.evmContentControl1.Size = new System.Drawing.Size(354, 183);
-            this.evmContentControl1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 351);
-            this.Controls.Add(this.evmContentControl1);
             this.Controls.Add(this._menu);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this._menu;
@@ -299,7 +288,6 @@ namespace MainApp
             this.PerformLayout();
         }
 
-        private MainApp.EvmContentControl evmContentControl1;
 
         private System.Windows.Forms.ToolStripMenuItem ファイルFToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _menuFileNewCreate;

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using Newtonsoft.Json;
 
 namespace MainApp.Evm.Content
 {
@@ -13,7 +14,7 @@ namespace MainApp.Evm.Content
     {
         private readonly List<EvmValue> _evmValues;
         private readonly Subject<Unit> _subject = new Subject<Unit>();
-        public virtual Color LegendColor { get; set; } = Color.Black;
+        public Color LegendColor { get; protected set; } = Color.Black;
         public IObservable<Unit> ContentChangedObservable => _subject.AsObservable();
 
         public EvmValue this[int idx]
@@ -36,12 +37,12 @@ namespace MainApp.Evm.Content
             return sum;
         }
 
-        public EvmValueList()
+        protected EvmValueList()
         {
             _evmValues = new List<EvmValue> {EvmValue.Zero};
         }
 
-        public EvmValueList(IEnumerable<EvmValue> evmValues)
+        protected EvmValueList(IEnumerable<EvmValue> evmValues)
         {
             _evmValues = evmValues.ToList();
         }
@@ -102,6 +103,17 @@ namespace MainApp.Evm.Content
         public string GetInfo()
         {
             return ToString() + ":" + GetAggregate();
+        }
+
+        public class EvmValueListSerializer
+        {
+            [JsonProperty("EvmValueList")]
+            public List<EvmValue> EvmValues { get; set; }
+
+            public EvmValueListSerializer(List<EvmValue> evmValues)
+            {
+                EvmValues = evmValues;
+            }
         }
     }
 }

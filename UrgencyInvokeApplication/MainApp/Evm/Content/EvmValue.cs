@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Globalization;
+using Newtonsoft.Json;
 
 namespace MainApp.Evm.Content
 {
     public class EvmValue : IEquatable<EvmValue>
     {
+        [JsonProperty("Second")]
         public int Second { get; }
         public double ToHour() => (double)Second / 3600;
 

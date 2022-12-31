@@ -11,7 +11,6 @@ namespace MainApp
     {
         private readonly IDisposable _subscribe;
         private Size _lastSize;
-
         public EvmModel EvmModel { get; set; } = EvmModel.Empty;
         public IObservable<Unit> TitleClickObservable => _titleLabel.TitleClickObservable;
 
@@ -23,12 +22,25 @@ namespace MainApp
             InitializeControl();
         }
 
+        private void EvmContentControl_Load(object sender, EventArgs e)
+        {
+            // ロード時は閉じた状態で固定
+            ResizeControl(false);
+        }
+
         private void InitializeControl()
         {
             _titleLabel.Text = EvmModel.Title;
             _infoText.Text = GetInfoStr();
+            _titleLabel.InitializeControl(EvmModel.Title);
         }
-        
+
+        public void SetModel(EvmModel evmModel)
+        {
+            EvmModel = evmModel;
+            InitializeControl();
+        }
+
         private void VisualizeInfo(bool expand)
         {
             var index = tableLayoutPanel1.Controls.GetChildIndex(_infoText);
@@ -51,7 +63,7 @@ namespace MainApp
         {
             return EvmModel.ToString();
         }
-        
+
         private void DisposeInternal()
         {
             using (_subscribe)

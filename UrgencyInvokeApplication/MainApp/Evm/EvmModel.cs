@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using MainApp.Evm.Content;
@@ -13,6 +12,7 @@ namespace MainApp.Evm
         private readonly AcPointList _acPointList;
         private readonly PvPointList _pvPointList;
         private readonly EvPointList _evPointList;
+        
         public string Title { get; }
         public DateTime StartDate { get; }
         public DateTime LimitDate { get; }
@@ -68,7 +68,8 @@ namespace MainApp.Evm
         {
             var limitDate = "期限日：" + LimitDate.ToString(CultureInfo.InvariantCulture) + "\n";
             var dayCount = "経過：" + GetDayCountFromStart() + "日" + "\n";
-            var evmInfo = Map.Values.Aggregate("", (current, value) => current + value.GetInfo() + "\n");
+            var evmInfo = Map[EvmType.Ac].GetInfo() + "\n" + Map[EvmType.Pv].GetInfo() + "\n" +
+                          Map[EvmType.Ev].GetInfo();
             return limitDate + dayCount + evmInfo;
         }
     }

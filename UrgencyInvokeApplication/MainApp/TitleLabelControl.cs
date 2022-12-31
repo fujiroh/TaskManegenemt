@@ -15,7 +15,7 @@ namespace MainApp
         private readonly Subject<Unit> _titleClickSubject = new Subject<Unit>();
         private readonly Bitmap _resizedExpandBtnImage_0;
         private readonly Bitmap _resizedExpandBtnImage_90;
-
+        
         public IObservable<bool> ExpandChangedObservable => _expandedSubject.AsObservable();
         public IObservable<Unit> TitleClickObservable => _titleClickSubject.AsObservable();
 
